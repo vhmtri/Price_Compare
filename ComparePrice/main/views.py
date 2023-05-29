@@ -3,7 +3,6 @@ from .models import Category, Brand, Store, Product, Price
 from django.core.paginator import Paginator
 import random
 from django.db.models import Min
-from .product_utils import sort_products
 
 
 # Create your views here.
