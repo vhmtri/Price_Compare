@@ -1,0 +1,227 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}<title>PriceBeta</title>{% endblock %}
+    <!-- bootsrap css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  
+    <!-- boxicons css -->
+      <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+
+    <!-- Font Awesome css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- native css -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+</head>
+<body>
+    <header>
+        <nav>
+          <div class="navbar">
+            <i class='bx bx-menu'></i>
+            <div class="logo"><a href="{% url 'index' %}"><i>Price<span style="color: var(--gold);">Compare</span></i></a></div>
+            <div class="nav-links">
+              <div class="sidebar-logo">
+                <span class="logo-name"><i>Price<span style="color: var(--gold);">Compare</i></span></span>
+                <i class='bx bx-x' ></i>
+              </div>
+              <ul class="links">
+                <li><a href="{% url 'index' %}">HOME</a></li>
+                <li>
+                  <a href="#">CATEGORY</a>
+                  <i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
+                  <ul class="htmlCss-sub-menu sub-menu">
+                    
+                    <li class="more">
+                      <span><a href="{% url 'product_list' %}">LAPTOPS</a>
+                      <i class='bx bxs-chevron-right arrow more-arrow'></i>
+                    </span>
+                      <ul class="more-sub-menu sub-menu">
+                        <li><a  href="#">Hp</a></li>
+                        <li><a href="#">Acer</a></li>
+                        <li><a href="#">Dell</a></li>
+                        <li><a href="#">Apple</a></li>
+                        <li><a href="#">Asus</a></li>
+                        <li><a href="#">Samsung</a></li>
+                        <li><a href="#">Lenovo</a></li>
+                        </ul>
+                      </li>
+                    </li>
+                    
+                  </ul>
+                </li>
+                <li><a href="#">ABOUT US</a></li>
+                <li><a href="#">CONTACT US</a></li>
+              </ul>
+            </div>
+            <div class="nav_right">
+                <ul>
+                  <li class="nr_li dd_main">
+                              <img src="{% static 'images/profile-circle.png' %}" alt="profile">
+                              <div class="dd_menu">
+                      
+                      <div class="dd_right">
+                        <ul>
+                          <li>
+                            {% if user.is_authenticated %}
+                            <p> Hi {{ user.username }}!</p>
+                               Welcome to <i><span style="color: var(--blueactive);"> Price</span><span style="color:  var(--gold);">Compare</span></i> <b>!</b>
+    
+          
+                              <li> <button class="profile-btn1"><a href="#">Logout</a> </button></li>
+                               {% else %}
+                              <p>You are not logged in.</p>
+                              <button class="profile-btn1"><a href="#">Register</a> </button>
+                              <button class="profile-btn2"><a href="#">Sign In</a> </button>
+                              {% endif %}
+                          </li>
+                              <hr>
+                              <li><a href="#">Coupon</a></li>
+                              <li><a href="#">Wish List</a></li>
+                              <li><a href="#">Profile</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav> 
+
+
+          <div>
+            <div class="big-header-container">
+              <h1><span style="color: var(--blueactive);"><i> Price</span><span style="color: var(--gold);">Compare</i></span></h1> 
+                <img class="phone1" src="{% static 'images/phone-1.png' %}" alt="phone">
+            </div>
+                
+               {% comment %} <p class="motto">Yafun Yafun</p>  {% endcomment %}
+                <form class="search" action="{% url 'product_search' %}" method="get">{% csrf_token %}
+                    <label for="search">Search:</label>
+                    <input type="text" id="search" name="q" placeholder="Bạn Muốn Tìm Kiếm Sản Phẩm Nào">
+                    <button type="submit" class="search-btn">Search</button>
+                </form>
+          </div>
+
+    </header>
+    <main>
+        {% block content %}
+        <!-- Default content here -->
+        {% endblock %}
+    </main>
+
+    <!-- FOOTER SECTION  STARTS HERE -->
+
+    <footer class="">
+
+      <!-- <div class="footer-sections"> -->
+      <div class="footer-section1">
+  
+          <div class="social-icons">
+              <h3 style="margin-bottom: 3px;"><i>Price<span style="color: var(--gold)">Compare</span></i></h3>
+  
+              <div class="socials">
+                  <div class="first-row">
+                      <a href="#"><i class="fa-regular fa-envelope" style="color: black;"></i></a>
+                      <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                      <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                      <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                  </div>
+                  <div class="second-row" style="padding-top: 4%;">
+                      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                      <a href="#"><i class="fa-brands fa-telegram"></i></a>
+                      <a href="#"><i class="fa-brands fa-github"></i></a>
+                      <a href="#"><i class="fa-brands fa-google-play"></i></a>
+                  </div>
+              </div>
+          </div>
+          <div class="top-searches">
+              <h4>Top Searches</h4>
+              <ul>
+                  <li>
+                      <a href="{% url 'product_search' %}?q=Lenovo+Legion+5">Lenovo Legion 5</a>
+                  </li>
+                  <li>
+                      <a href="{% url 'product_search' %}?q=Acer+Nitro+5">Acer Nitro 5</a>
+                  </li>
+                  <li>
+                      <a href="{% url 'product_search' %}?q=Acer+Predator">Acer Predator</a>
+                  </li>
+                  <li>
+                      <a href="{% url 'product_search' %}?q=Macbook">Macbook</a>
+                  </li>
+              </ul>
+          </div>
+  
+          <div class="top-brand">
+              <h4>Top Brands</h4>
+              <ul>
+                  <li>
+                      <a href="{% url 'product_search' %}?q=Lenovo">Lenovo</a>
+                  </li>
+                  <li>
+                      <a href="{% url 'product_search' %}?q=Acer">Acer</a>
+                  </li>
+                  <li>
+                      <a href="{% url 'product_search' %}?q=Asus">Asus</a>
+                  </li>
+  
+              </ul>
+  
+          </div>
+  
+      
+  
+      </div>
+  
+      <div class="footer-section2">
+          <div class="copyright">
+              <i class="fas fa-copyright"></i>
+              <span style="color: #000;">2023</span>
+              <div class="vl"></div>
+              <h3><i><span style="color: var(--blueactive);">Price</span><span
+                          style="color: var(--gold);">Comnpare</span></i></h3>
+          </div>
+  
+          <div class="footer-nav">
+  
+              <ul class="foot-nav">
+                  <li>
+                      <a href="index.html">Home</a>
+                  </li>
+                  <li>
+                      <a href="#">Category</a>
+                  </li>
+                  
+              </ul>
+  
+          </div>
+      </div>
+      </div>
+      <div class="show">
+          <i class="fas fa-copyright"></i>
+          <span> 2022</span>
+      </div>
+  
+  
+  
+      <!-- FOOTER SECTION ENDS HERE -->
+  
+  
+  </footer>
+  
+  <!-- FOOTER SECTION ENDS HERE -->
+  
+      <!-- frameworks and native js -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+      <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+      <script src="{% static 'js/script.js' %}"></script>
+
+
+</body>
