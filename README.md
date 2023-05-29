@@ -1,7 +1,7 @@
 
 # Price-Compare-Django
 * Home page
-![image](https://github.com/vhmtri/Project_PTUD/assets/125715460/6403daa2-67fc-4d36-a803-3487a718cd82)
+![image](https://github.com/vhmtri/Price_Compare/assets/125715460/23099610-d295-406b-bd89-c1fbd43b5cca)
 # Hướng dẫn sử dụng
 ## Bước 1: Tạo môi trường ảo Python và Cài đặt thư viện 
 trong `cmd` chạy các lệnh
