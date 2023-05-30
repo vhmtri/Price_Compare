@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+     <!-- bootsrap css -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  
+     <!-- boxicons css -->
+       <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+ 
+     <!-- Font Awesome css -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+        @import url('http://fonts.cdnfonts.com/css/sf-pro-display');
+        @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+
+    :root {
+     --lightblueactive: #b0daef;
+     --lightbluehover: #d9edf7;
+     --lightblue: #e6f3fa;
+     --blue: #006da3;
+     --bluehover: #007ab8;
+     --blueactive: #0088cc;
+     --bluedark: #008899;
+     --gold: #f58f1a;
+}
+
+    body {
+        font-family: 'SF Pro Display','Poppins', sans-serif;  
+        padding: 0;
+        margin: 0;      
+    }
+
+    h2 {
+        font-weight: 700;
+        margin-bottom: 10%;
+    }
+
+    
+    input {
+        display: block;
+        width: 100%;
+        padding: 4px;
+        padding-left: 10px;
+        border: 1px solid var(--lightblueactive);
+        border-radius: 5px;
+        background-color: var(--lightblue);
+    }
+
+    input:focus {
+        border: 1px solid var(--blueactive);
+    }
+
+    form > p {
+        font-size: 0.9rem;
+        padding-left: 7px;
+    }
+
+    form > p > a {
+        text-decoration: none;
+        color: var(--blueactive);
+    }
+
+    .input-field {
+        width: 70%;
+    }
+
+    .username {
+        margin-bottom: 3%;
+    }
+
+    .password {
+        margin-bottom: 1%;
+    }
+
+    .login-form {
+        background-color: var(--lightbluehover);
+        border: 1px solid var(--lightblueactive);
+        margin: 2% 4%;
+        padding: 2% 6% 4%;
+        border-radius: 10px;
+    }
+
+    .form-head {
+        margin-top: 3%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .form-head > a {
+        text-decoration: none;
+        color: #000;
+        font-size: 1.6rem;
+        font-weight: 400;
+        font-family: "Poppins" sans-serif;
+    }
+
+    .form-head > a:hover {
+        color: var(--bluehover);
+    }
+
+    .input-field > p > a {
+        display: flex;
+        justify-content: end;
+        text-decoration: none;
+        color: #000;
+        font-size: 0.9rem;
+    }
+
+    .input-field > p > a:hover {
+        color: var(--bluehover);
+    }
+
+    .btn {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 8px 8px 2px;
+        margin-top: 4%;
+    }
+
+    .btn img {
+        max-width: 20px;
+        margin-bottom: 2px;
+    }
+
+    .loginbtn {
+        width: max-content;
+        margin-bottom: 2%;
+        background-color: var(--lightbluehover);
+        color: var(--blueactive);
+        border: 1px solid var(--blueactive);
+        padding: 6px;
+        border-radius: 5px;
+    }
+
+    .loginbtn:hover, .googlebtn:hover {
+        background-color: var(--blueactive);
+        color: white;
+    }
+
+    .googlebtn {
+        width: max-content;
+        margin-bottom: 1%;
+        background-color: var(--lightbluehover);
+        color: var(--blueactive);
+        border: 1px solid var(--blueactive);
+        padding: 6px 8px 4px;
+        border-radius: 5px;
+    }
+
+    .viewpwd.material-icons {
+     float: right;
+     margin-left: -25px;
+     margin-top: -27px;
+     margin-right: 2px;
+     position: relative;
+     z-index: 2;
+     cursor: pointer;
+     font-size: 1.2rem;
+     
+    }
+
+
+@media (max-width: 1028px) {
+    .login-form {
+        margin: 4%;
+        padding-bottom: 25%;
+    }
+    .form-head   {
+        margin-top: 25%;
+    }
+}
+    </style>
+
+</head>
+
+
+<body>
+    <div class="login-form">
+        <form action="">
+            <div class="form-head">
+                <h2>Welcome back</h2>
+                <a href="index.html"><img style="max-width: 30px; mix-blend-mode: darken;" src="assets/images/cancel icon.jpg" alt=""></a>
+            </div>
+
+             <div class="input-field">
+
+                <input type="text" name="username" class="username" placeholder="Username" required>
+                <div class="inputholder">
+                    <input id="password" type="password" placeholder="Password" required>
+                    <span id="passwordIcon" class="viewpwd material-icons">visibility</span>
+                </div>
+                <p><a href="#">Forgotten password?</a></p>
+             </div> 
+
+             <div class="btn">
+                <button type="submit" class="loginbtn">Log In</button>
+                <button class="googlebtn"><img src="assets/images/google logo.png" alt="google"> Continue with Google</button>
+             </div>
+           
+             <p>Don't have an account? <a href="./signup.html">Create one</a></p>
+        </form>
+       
+    </div>
+
+   <script>
+        const password = document.getElementById('password');
+        const passwordIcon = document.getElementById('passwordIcon');
+
+        passwordIcon.addEventListener("click", function () {
+            // toggle the type attribute
+            const type = password.getAttribute("type") === "password" ? "text" : "password";
+            password.setAttribute("type", type);
+            
+            // toggle the icon
+            if (passwordIcon.textContent == "visibility") {
+                passwordIcon.textContent = "visibility_off";
+            } else {
+                passwordIcon.textContent = "visibility";
+            }
+        });
+   </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

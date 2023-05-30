@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Sign Up</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+            @import url('http://fonts.cdnfonts.com/css/sf-pro-display');
+            @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+            /* Universal styles */
+
+            *,::after,::before {
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+                list-style: none;
+                scroll-behavior: smooth;
+                list-style: none;
+                -webkit-tap-highlight-color: transparent;
+                -webkit-touch-callout: none;
+            }
+
+            :root {
+            --lightblueactive: #b0daef;
+            --lightbluehover: #d9edf7;
+            --lightblue: #e6f3fa;
+            --blue: #006da3;
+            --bluehover: #007ab8;
+            --blueactive: #0088cc;
+            --bluedark: #008899;
+            --gold: #f58f1a;
+            font-family: 'Poppins', sans-serif !important;
+            }
+
+            a {
+                text-decoration: none;
+            }
+
+            html {
+                width: 100%;
+                
+            }
+
+            h2 {
+                font-weight: 600;
+                font-size: 2rem;
+            }
+
+
+            p {
+                font-size: 1.2rem;
+                letter-spacing: .5px;
+                font-weight: 300;
+            }
+
+            header {
+                position: relative;
+                padding: 60px 40px 40px 40px;
+                width: 100%;
+                display: none;
+            }
+
+            header .logo-wrapper {
+                position: relative;
+                width: 40%;
+                margin: auto;
+            }
+
+            .logo-wrapper img {
+                width: 100%;
+            }
+
+            .reg-wrapper {
+                position: relative;
+                padding: 40px;
+                height: auto;
+            }
+
+            .reg-wrapper .holder {
+                position: relative;
+                margin: auto;
+                padding: 25px 70px;
+                border: 1px #08C6 solid;
+                border-radius: 20px;
+                background: linear-gradient(90deg, rgba(0, 136, 204, 0.56) 0%, rgba(0, 136, 204, 0.16) 100%, rgba(0, 136, 204, 0.16) 100%);
+            }
+
+            .cancelBtn {
+                color: #000;
+            }
+
+            .holder .reg-detail {
+                position: relative;
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .holder .reg-title {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                margin-bottom: 18px;
+            }
+
+            .holder form {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                width: 80%;
+            }
+
+            form .inputholder {
+                position: relative;
+                width: 50%;
+            }
+
+            .inputholder input {
+                position: relative;
+                background: linear-gradient(90deg, rgba(255, 255, 255, 0.32) 0%, rgba(255, 255, 255, 0.16) 100%);
+                width: 100%;
+                font-size: .95rem;
+                padding: 10px 20px;
+                border: 1px solid rgba(0, 136, 204, 0.4);
+                outline: none;
+            }
+
+            .viewpwd.material-icons {
+                position: absolute;
+                cursor: pointer;
+                right: 15px;
+                top: 15px;
+                font-size: 16px;
+            }
+
+            form button {
+                border: 1.5px solid #0088CC;
+                border-radius: 6px;
+                color: #0088CC;
+                background-color: transparent;
+                font-size: 1.2rem;
+                font-weight: 500;
+                padding: 5px 10px;
+                cursor: pointer;
+            }
+
+            form button:hover {
+                background-color: var(--blueactive);
+                color: white;
+            }
+
+            @media screen and (max-width: 480px) {
+                header {
+                    display: block;
+                }
+
+                .reg-wrapper .holder {
+                    padding: 25px 30px;
+                }
+
+                .holder .reg-title {
+                    text-align: center;
+                    width: 100%;
+                }
+
+                .cancel {
+                    display: none;
+                }
+
+                h2 {
+                    font-size: 1.5rem;
+                }
+
+                p {
+                    font-size: .85rem;
+                    font-weight: 400;
+                    text-align: center;
+                }
+
+                .holder form, form .inputholder {
+                    width: 100%;
+                    gap: 25px;
+                }
+
+                .holder .buttonCon {
+                    align-self: center;
+                    width: 100%;
+                }
+
+                .buttonCon button {
+                    width: 100%;
+                }
+            }
+
+            @media screen and (max-width: 800px) {
+                .cancel {
+                    display: none;
+                }
+
+                form .inputholder {
+                    width: 100%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="logo-wrapper"><img src="assets/images/PriceBeta.png" alt="PriceBeta Logo"></div>
+        </header>
+        <div class="reg-wrapper">
+            <div class="holder">
+                <div class="reg-detail">
+                    <div class="reg-title">
+                        <h2>Create an Account</h2>
+                        <p>Creating an account is easy.</p>
+                    </div>
+                    <div class="cancel">
+                        <a href="#" class="cancelBtn"><span  class="material-icons">close</span></a>
+                    </div>
+                </div>
+                
+                <form action="">
+                    <div class="inputholder">
+                        <input type="text" placeholder="Enter Username" required>
+                    </div>
+                    <div class="inputholder">
+                        <input type="email" placeholder="Enter Email" required>
+                    </div>
+                    <div class="inputholder">
+                        <input id="password" type="password" placeholder="Enter Password" required>
+                        <span id="passwordIcon" class="viewpwd material-icons">visibility</span>
+                    </div>
+                    <div class="inputholder">
+                        <input id="conPassword" type="password" placeholder="Confirm Password" required>
+                        <span id="conPasswordIcon" class="viewpwd material-icons">visibility</span>
+                    </div>
+
+                    <div>
+                        <p>By signing up, you confirm that you have read and accepted our <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>.</p>
+                    </div>
+
+                    <div class="buttonCon">
+                        <button type="submit">Create Account</button>
+                    </div>
+
+                    <div>
+                        <p>Already have an account? <a href="./login.html">Log In</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+    <script>
+        const password = document.getElementById('password');
+        const passwordIcon = document.getElementById('passwordIcon');
+
+        passwordIcon.addEventListener("click", function () {
+            // toggle the type attribute
+            const type = password.getAttribute("type") === "password" ? "text" : "password";
+            password.setAttribute("type", type);
+            
+            // toggle the icon
+            if (passwordIcon.textContent == "visibility") {
+                passwordIcon.textContent = "visibility_off";
+            } else {
+                passwordIcon.textContent = "visibility";
+            }
+        });
+
+        const conPassword = document.getElementById('conPassword');
+        const conPasswordIcon = document.getElementById('conPasswordIcon');
+
+        conPasswordIcon.addEventListener("click", function () {
+            // toggle the type attribute
+            const type = conPassword.getAttribute("type") === "password" ? "text" : "password";
+            conPassword.setAttribute("type", type);
+            
+            // toggle the icon
+            if (conPasswordIcon.textContent == "visibility") {
+                conPasswordIcon.textContent = "visibility_off";
+            } else {
+                conPasswordIcon.textContent = "visibility";
+            }
+        });
+
+    </script>
+</html>
