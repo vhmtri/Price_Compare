@@ -31,7 +31,9 @@
 			<div class="owl-carousel owl-theme">
 				{% for laptop in product_info %}
 				<div class="item" >
+					<a href="{% url 'product_detail' laptop.product_name %}">
 						<img class="img" src="{{ laptop.image_url }}" height="500" width="510" alt="image" style="image-rendering: crisp-edges;">
+					</a>
 					<div class="img-text">
 					  <p class="computer-1"><a href="{% url 'product_detail' laptop.product_name %}">{{ laptop.product_name }}</a></p>
 					  <p class="computer1-price" style="color: red;">Giá từ {{ laptop.lowest_price }}</p>

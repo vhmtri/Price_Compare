@@ -90,7 +90,9 @@ def product_search(request):
 def base(request):
     return render(request, 'main/base.html')
 def product_detail(request, product_name):
-    product = get_object_or_404(Product, name=product_name)
-    prices = product.price_set.all()
-    lowest_price = product.price_set.aggregate(lowest_price=Min('price'))['lowest_price']
+    product = Product.objects.filter(name=product_name).first()
+    #prices = product.price_set.all()
+    prices=Price.objects.filter(product=product)
+    #lowest_price = product.price_set.aggregate(lowest_price=Min('price'))['lowest_price']
+    lowest_price = prices.aggregate(lowest_price=Min('price'))['lowest_price']
     return render(request, 'main/product_detail.html', {'product': product, 'prices': prices,'lowest_price': lowest_price})
